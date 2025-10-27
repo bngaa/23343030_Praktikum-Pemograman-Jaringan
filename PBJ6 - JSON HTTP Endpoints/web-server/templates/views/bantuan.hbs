@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bantuan - Aplikasi Cek Cuaca</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/cuaca.png">
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        
+        <div class="help-container">
+            <div class="help-header">
+                <h1>Pusat Bantuan</h1>
+                <p>Pertanyaan yang Sering Diajukan (FAQ)</p>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-category">
+                    <h2>🔍 Tentang Pencarian</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Bagaimana cara mencari informasi cuaca?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ketik nama kota atau lokasi yang ingin Anda cari pada kolom pencarian di halaman utama, lalu klik tombol "Cari Lokasi". Sistem akan menampilkan informasi cuaca untuk lokasi tersebut.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Format pencarian seperti apa yang didukung?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Anda dapat mencari dengan berbagai format:</p>
+                            <ul>
+                                <li>Nama kota (contoh: "Jakarta")</li>
+                                <li>Nama kota dan negara (contoh: "Padang, Indonesia")</li>
+                                <li>Alamat lengkap (contoh: "Universitas Negeri Padang")</li>
+                                <li>Kode pos (untuk beberapa wilayah)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Mengapa pencarian saya tidak berhasil?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Beberapa alasan pencarian mungkin tidak berhasil:</p>
+                            <ul>
+                                <li>Nama lokasi tidak spesifik</li>
+                                <li>Koneksi internet bermasalah</li>
+                                <li>Lokasi tidak terdapat dalam database</li>
+                                <li>Menggunakan karakter khusus yang tidak didukung</li>
+                            </ul>
+                            <p>Coba gunakan nama lokasi yang lebih spesifik atau periksa koneksi internet Anda.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2>🌤️ Tentang Informasi Cuaca</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Informasi cuaca apa saja yang ditampilkan?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Aplikasi menampilkan informasi cuaca lengkap termasuk:</p>
+                            <ul>
+                                <li>Deskripsi kondisi cuaca (cerah, hujan, berawan, dll)</li>
+                                <li>Suhu saat ini dalam derajat Celsius</li>
+                                <li>Index UV untuk perlindungan kulit</li>
+                                <li>Tingkat visibilitas dalam kilometer</li>
+                                <li>Nama lokasi yang tepat</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Seberapa akurat informasi cuaca yang diberikan?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Informasi cuaca yang diberikan sangat akurat dan diperbarui secara real-time menggunakan data dari sumber terpercaya. Akurasi dapat mencapai 95% untuk perkiraan cuaca saat ini.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Berapa sering data cuaca diperbarui?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Data cuaca diperbarui secara otomatis setiap kali Anda melakukan pencarian. Sistem mengambil data terbaru langsung dari penyedia layanan cuaca.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h2>📱 Penggunaan Aplikasi</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Apakah aplikasi ini gratis?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya, aplikasi ini sepenuhnya gratis tanpa biaya tersembunyi. Anda dapat menggunakan semua fitur yang tersedia tanpa batasan.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Apakah aplikasi ini membutuhkan registrasi?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tidak, aplikasi ini tidak memerlukan registrasi atau login. Anda dapat langsung menggunakan semua fitur yang tersedia.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Apakah aplikasi ini tersedia untuk mobile?</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya, aplikasi ini responsive dan dapat diakses dengan optimal melalui smartphone, tablet, maupun desktop.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-support">
+                    <h2>Masih Butuh Bantuan?</h2>
+                    <p>Jika Anda tidak menemukan jawaban yang Anda cari, silakan hubungi tim support kami.</p>
+                    <div class="support-contact">
+                        <p>📧 Email: support@weatherapp.com</p>
+                        <p>🕒 Waktu Respon: 1x24 jam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{>footer}}
+    <script>
+        // JavaScript untuk toggle FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.toggle-icon');
+                
+                answer.classList.toggle('active');
+                icon.textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>
