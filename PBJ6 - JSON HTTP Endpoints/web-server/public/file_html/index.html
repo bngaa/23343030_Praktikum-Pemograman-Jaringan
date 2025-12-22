@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Cek Cuaca</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Aplikasi Cek Cuaca</h1>
+            <p>Developer: Bunga Aprillia (23343030)</p>
+            <nav>
+                <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/tentang">Tentang</a></li>
+                    <li><a href="/bantuan">Bantuan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <h1>Selamat Datang</h1>
+            <p>Aplikasi ini membantu Anda cek cuaca di lokasi manapun.</p>
+            
+            <h2>Cara Menggunakan:</h2>
+            <p>Gunakan endpoint <code>/infocuaca?address=nama_lokasi</code> untuk mendapatkan data cuaca JSON.</p>
+            
+            <h3>Contoh Request:</h3>
+            <pre>GET /infocuaca?address=Jakarta</pre>
+
+            <h3>Contoh Response:</h3>
+            <pre>{
+  "prediksiCuaca": "Info Cuaca: Clear. Suhu saat ini adalah 28 derajat...",
+  "lokasi": "Jakarta, Indonesia",
+  "address": "Jakarta"
+}</pre>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 - Aplikasi Cek Cuaca by Bunga Aprillia (23343030)</p>
+            <p>Praktikum: PBJ6 - JSON HTTP Endpoints</p>
+        </div>
+    </footer>
+</body>
+</html>

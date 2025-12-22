@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <div class="main-content">
+            <h1>{{judul}}</h1>
+            
+            <div class="news-search">
+                <input type="text" id="search-query" placeholder="terkini" value="terkini">
+                <select id="category-select">
+                    <option value="">Semua Kategori</option>
+                    <option value="technology">Teknologi</option>
+                    <option value="business">Bisnis</option>
+                    <option value="entertainment">Hiburan</option>
+                </select>
+                <button class="btn-search" onclick="searchNews()">Cari</button>
+            </div>
+            
+            <div id="news-container">
+                <p>Muat berita terbaru...</p>
+            </div>
+        </div>
+    </main>
+    {{>footer}}
+    
+    <script>
+        async function searchNews() {
+            const query = document.getElementById('search-query').value || 'terkini';
+            const container = document.getElementById('news-container');
+            container.innerHTML = '<p>Memuat berita...</p>';
+            
+            try {
+                // Menggunakan NewsAPI atau API berita lokal
+                const response = await fetch(`https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&language=id&sortBy=publishedAt&apiKey=demo`);
+                
+                if (!response.ok) {
+                    // Fallback dengan berita dummy
+                    showDummyNews();
+                    return;
+                }
+                
+                const data = await response.json();
+                
+                if (data.articles && data.articles.length > 0) {
+                    let html = '';
+                    data.articles.slice(0, 10).forEach(article => {
+                        html += `
+                            <div class="news-item">
+                                <h3>${article.title}</h3>
+                                <p>${article.description || ''}</p>
+                                <p class="news-source">${article.source.name} • ${new Date(article.publishedAt).toLocaleDateString('id-ID')}</p>
+                                <a href="${article.url}" target="_blank" class="read-more">Baca Selengkapnya</a>
+                            </div>
+                        `;
+                    });
+                    container.innerHTML = html;
+                } else {
+                    showDummyNews();
+                }
+            } catch (error) {
+                showDummyNews();
+            }
+        }
+        
+        function showDummyNews() {
+            const container = document.getElementById('news-container');
+            container.innerHTML = `
+                <div class="news-item">
+                    <h3>BELEZA MORTAL! Confira o primeiro trailer de 'The Beauty', nova série de Ryan Murphy</h3>
+                    <p>O canal FX divulgou o primeiro trailer de &#8216;The Beauty&#8217;, nova série criada pelo Ryan Murphy (&#8216;American Horror Story&#8217;). Os três primeiros episódios serão lançados no dia 21 de janeiro. No Brasil, a produção estará disponível através do serviço de streaming do Disney+. Confira e siga o CinePOP no Youtube: Rebecca Hall se junta ao {&#8230;}</p>
+                    <p class="news-source">cinepop • 22 Desember 2025 pukul 19.43</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+                
+                <div class="news-item">
+                    <h3>Barloworld (OTCMKTS:BRRAY) Reaches New 12-Month High - Here's What Happened</h3>
+                    <p>Barloworld (OTCMKTS:BRRAY) Sets New 52-Week High - Should You Buy?</p>
+                    <p class="news-source">lulegacy • 22 Desember 2025 pukul 19.43</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+                
+                <div class="news-item">
+                    <h3>Mercury General (NYSE:MCY) Hits New 12-Month High - Still a Buy?</h3>
+                    <p>Mercury General (NYSE:MCY) Reaches New 1-Year High - Still a Buy?</p>
+                    <p class="news-source">lulegacy • 22 Desember 2025 pukul 19.43</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+                
+                <div class="news-item">
+                    <h3>BOK Financial (NASDAQ:BOKF) Reaches New 12-Month High - What's Next?</h3>
+                    <p>BOK Financial (NASDAQ:BOKF) Reaches New 12-Month High - Still a Buy?</p>
+                    <p class="news-source">lulegacy • 22 Desember 2025 pukul 19.43</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+                
+                <div class="news-item">
+                    <h3>Barclays (NYSE:BCS) Hits New 1-Year High - Time to Buy?</h3>
+                    <p>Barclays (NYSE:BCS) Hits New 12-Month High - Should You Buy?</p>
+                    <p class="news-source">lulegacy • 22 Desember 2025 pukul 19.43</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+            `;
+        }
+        
+        // Load dummy news on page load
+        showDummyNews();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2>🌤️ Cek Cuaca Hari Ini!</h2>
+                <p>Dapatkan informasi cuaca terkini di lokasi Anda dengan cepat dan akurat. Masukkan nama kota atau lokasi favorit Anda untuk mendapatkan prediksi cuaca yang detail.</p>
+                <form class="search-form">
+                    <input type="text" id="address" placeholder="Masukkan nama kota atau lokasi" required>
+                    <button type="submit" class="btn-search">Cari Lokasi</button>
+                </form>
+                <div id="cuaca-result"></div>
+            </div>
+            <div class="weather-illustration">
+                <div class="weather-icon">☀️</div>
+            </div>
+        </div>
+    </main>
+    {{>footer}}
+    
+    <script>
+        document.querySelector('.search-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const address = document.getElementById('address').value;
+            const resultDiv = document.getElementById('cuaca-result');
+            const icon = document.querySelector('.weather-icon');
+            
+            resultDiv.innerHTML = '<p style="color: #667eea; text-align: center;">⏳ Memuat data cuaca...</p>';
+            
+            try {
+                const response = await fetch(`/infocuaca?address=${encodeURIComponent(address)}`);
+                const data = await response.json();
+                
+                if (data.error) {
+                    resultDiv.innerHTML = `<div style="color: #e74c3c; margin-top: 20px; padding: 15px; background: #fff5f5; border-radius: 8px; border-left: 4px solid #e74c3c;">❌ ${data.error}</div>`;
+                    icon.textContent = '😞';
+                } else {
+                    const iconMap = {
+                        'hujan': '🌧️',
+                        'cerah': '☀️',
+                        'awan': '☁️',
+                        'bersih': '☀️',
+                        'mendung': '⛅'
+                    };
+                    
+                    let weatherIcon = '🌤️';
+                    const prediksi = data.prediksiCuaca.toLowerCase();
+                    for (const [key, value] of Object.entries(iconMap)) {
+                        if (prediksi.includes(key)) {
+                            weatherIcon = value;
+                            break;
+                        }
+                    }
+                    icon.textContent = weatherIcon;
+                    
+                    resultDiv.innerHTML = `
+                        <div style="margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #f0f4ff 0%, #f8f9ff 100%); border-radius: 12px; border-left: 5px solid #667eea;">
+                            <h3 style="color: #667eea; margin-bottom: 15px; font-size: 20px;">📍 Hasil Cuaca</h3>
+                            <p style="margin-bottom: 10px;"><strong style="color: #333;">Lokasi:</strong> <span style="color: #667eea; font-weight: 600;">${data.lokasi}</span></p>
+                            <p style="margin-bottom: 10px;"><strong style="color: #333;">Prediksi:</strong> <span style="color: #666;">${data.prediksiCuaca}</span></p>
+                            <p style="margin-top: 15px; font-size: 13px; color: #999;">✓ Data cuaca diperbarui secara real-time</p>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                resultDiv.innerHTML = `<div style="color: #e74c3c; margin-top: 20px; padding: 15px; background: #fff5f5; border-radius: 8px; border-left: 4px solid #e74c3c;">❌ Error: ${err.message}</div>`;
+                icon.textContent = '😕';
+            }
+        });
+    </script>
+</body>
+
+</html>

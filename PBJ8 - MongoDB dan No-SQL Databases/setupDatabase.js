@@ -49,14 +49,14 @@ async function setupDatabase() {
                 usia: 21
             },
             {
-                nama: "Ahmad",
-                email: "ahmad@example.com",
-                usia: 26
+                nama: "Bunga Aprillia",
+                email: "bunga.dev@example.com",
+                usia: 21
             },
             {
-                nama: "Siti",
-                email: "siti@example.com",
-                usia: 20
+                nama: "Bunga Aprillia",
+                email: "bunga.student@example.com",
+                usia: 21
             }
         ]);
         console.log(`✓ Koleksi "pengguna" dibuat dengan ${penggunaInsert.insertedCount} dokumen`);
@@ -109,9 +109,9 @@ async function setupDatabase() {
                 usia: 21
             },
             {
-                nama: "Ahmad",
-                email: "ahmad@example.com",
-                usia: 26
+                nama: "Bunga Aprillia",
+                email: "bunga.aprillia@example.com",
+                usia: 21
             }
         ]);
         console.log(`✓ Koleksi "pengguna" di task-manager dibuat dengan ${pengguna2Insert.insertedCount} dokumen`);

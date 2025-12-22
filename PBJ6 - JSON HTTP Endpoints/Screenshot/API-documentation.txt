@@ -1,0 +1,125 @@
+PBJ6 - JSON HTTP Endpoints
+Student: Bunga Aprillia (23343030)
+Date: 23 Desember 2025
+
+=== DOKUMENTASI API RESPONSES ===
+
+1. HALAMAN UTAMA (GET /)
+------------------------------------
+Response: HTML halaman utama dengan informasi singkat
+Status: 200 OK
+
+2. HALAMAN TENTANG (GET /tentang)
+------------------------------------
+Response: HTML halaman tentang developer
+Status: 200 OK
+Content:
+- Nama: Bunga Aprillia
+- NIM: 23343030
+- Info praktikum
+
+3. HALAMAN BANTUAN (GET /bantuan)
+------------------------------------
+Response: HTML halaman bantuan
+Status: 200 OK
+Content:
+- Cara menggunakan API
+- Contoh request
+- Troubleshooting
+
+4. API CUACA JSON (GET /infocuaca)
+------------------------------------
+Request: GET /infocuaca?address=Jakarta
+
+Response Success (200 OK):
+{
+  "prediksiCuaca": "Info Cuaca: Clear. Suhu saat ini adalah 28 derajat. Index UV adalah 5. Visibilitas 10 kilometer",
+  "lokasi": "Jakarta, Indonesia",
+  "address": "Jakarta"
+}
+
+Request: GET /infocuaca?address=Bandung
+
+Response Success (200 OK):
+{
+  "prediksiCuaca": "Info Cuaca: Cloudy. Suhu saat ini adalah 22 derajat. Index UV adalah 3. Visibilitas 8 kilometer",
+  "lokasi": "Bandung, Indonesia",
+  "address": "Bandung"
+}
+
+Request: GET /infocuaca?address=Surabaya
+
+Response Success (200 OK):
+{
+  "prediksiCuaca": "Info Cuaca: Rainy. Suhu saat ini adalah 26 derajat. Index UV adalah 2. Visibilitas 5 kilometer",
+  "lokasi": "Surabaya, Indonesia",
+  "address": "Surabaya"
+}
+
+Request: GET /infocuaca (tanpa parameter)
+
+Response Error (400):
+{
+  "error": "Kamu harus memasukan lokasi yang ingin dicari"
+}
+
+Request: GET /infocuaca?address=xyzabcxyz123
+
+Response Error:
+{
+  "error": "Tidak dapat menemukan lokasi. Lakukan pencarian lokasi yang lain"
+}
+
+5. PAGE 404 (GET /nonexistent)
+------------------------------------
+Response: HTML halaman error 404
+Status: 404
+Message: "Halaman tidak ditemukan."
+
+=== TEKNOLOGI YANG DIGUNAKAN ===
+
+Backend:
+- Node.js (JavaScript Runtime)
+- Express.js (Web Framework)
+- Handlebars (Template Engine)
+- postman-request (HTTP Request Library)
+
+Frontend:
+- HTML5
+- CSS3
+- Handlebars Templates
+
+API Eksternal:
+- Mapbox Geocoding API (koordinat dari alamat)
+- WeatherStack API (data cuaca real-time)
+
+=== STRUKTUR REQUEST FLOW ===
+
+1. User mengirim GET request ke /infocuaca?address=Jakarta
+2. Express router menangkap request
+3. Validasi parameter address
+4. Panggil geocode() → Mapbox API menghasilkan lat/long
+5. Panggil forecast() → WeatherStack API menghasilkan data cuaca
+6. Format response JSON
+7. Kirim response ke client
+
+=== ERROR HANDLING ===
+
+✓ Missing parameter: Kirim error message
+✓ Invalid location: API returns error handling
+✓ API connection error: Return error message
+✓ Invalid route: Redirect to 404 page
+✓ All responses properly formatted as JSON
+
+=== TESTING CHECKLIST ===
+
+✓ Server dapat dijalankan tanpa error
+✓ Halaman utama dapat diakses
+✓ Halaman tentang menampilkan informasi benar
+✓ Halaman bantuan dapat diakses
+✓ API cuaca mengembalikan JSON valid
+✓ Parameter validation berfungsi
+✓ Error handling untuk lokasi tidak ditemukan
+✓ Static files (CSS) dapat diakses
+✓ Handlebars partials bekerja dengan baik
+✓ Port 5000 responsive

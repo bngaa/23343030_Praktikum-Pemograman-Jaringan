@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <div class="main-content">
+            <h1>{{judul}}</h1>
+            <p style="color: #666; margin-bottom: 30px;">Kenali lebih dekat developer di balik Aplikasi Cek Cuaca</p>
+            
+            <div class="profile-section">
+                <img src="/img/bunga.jpg" alt="Profil Bunga Aprillia" class="profile-photo">
+                <div class="profile-info">
+                    <h2>{{nama}}</h2>
+                    <p class="role-badge">Full Stack Developer</p>
+                    <p style="margin-top: 20px; line-height: 1.8;">
+                        Saya adalah seorang pengembang web yang memiliki passion dalam membangun aplikasi berbasis web yang interaktif dan bermanfaat. 
+                        Saya senang mempelajari teknologi baru serta menciptakan solusi digital yang dapat membantu orang lain dalam kehidupan sehari-hari.
+                    </p>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 40px; margin-bottom: 20px;">📚 Keahlian Teknis</h2>
+            <div class="skills-section">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">API Integration</span>
+                <span class="skill-tag">MongoDB</span>
+            </div>
+            
+            <h2 style="margin-top: 40px; margin-bottom: 20px;">📞 Kontak</h2>
+            <div class="contact-section">
+                <div class="contact-item">
+                    <strong>Email:</strong> bunga.aprillia@example.com
+                </div>
+                <div class="contact-item">
+                    <strong>GitHub:</strong> <a href="https://github.com/bngaa" target="_blank">github.com/bngaa</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Lokasi:</strong> Padang, Indonesia
+                </div>
+            </div>
+        </div>
+    </main>
+    {{>footer}}
+</body>
+
+</html>

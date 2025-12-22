@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bantuan - Aplikasi Cek Cuaca</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Aplikasi Cek Cuaca</h1>
+            <p>Developer: Bunga Aprillia (23343030)</p>
+            <nav>
+                <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/tentang">Tentang</a></li>
+                    <li><a href="/bantuan">Bantuan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <h1>Bantuan</h1>
+            <h2>Cara Menggunakan Aplikasi</h2>
+            
+            <h3>1. Endpoint API Cuaca</h3>
+            <p>Untuk mendapatkan data cuaca, gunakan endpoint berikut:</p>
+            <pre>GET /infocuaca?address=&lt;nama_lokasi&gt;</pre>
+            
+            <h3>2. Contoh Penggunaan</h3>
+            <p>Misalnya untuk mencari cuaca di Jakarta:</p>
+            <pre>GET /infocuaca?address=Jakarta</pre>
+            
+            <h3>3. Response Format</h3>
+            <p>Server akan mengembalikan JSON dengan format:</p>
+            <pre>{
+  "prediksiCuaca": "string",
+  "lokasi": "string",
+  "address": "string"
+}</pre>
+
+            <h3>4. API yang Digunakan</h3>
+            <ul>
+                <li><strong>Mapbox Geocoding API</strong> - Untuk mengonversi alamat ke koordinat</li>
+                <li><strong>WeatherStack API</strong> - Untuk mendapatkan data cuaca berdasarkan koordinat</li>
+            </ul>
+
+            <h3>5. Troubleshooting</h3>
+            <ul>
+                <li>Pastikan koneksi internet stabil</li>
+                <li>Masukkan nama lokasi yang valid</li>
+                <li>Server berjalan pada port 5000</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 - Aplikasi Cek Cuaca by Bunga Aprillia (23343030)</p>
+            <p>Praktikum: PBJ6 - JSON HTTP Endpoints</p>
+        </div>
+    </footer>
+</body>
+</html>

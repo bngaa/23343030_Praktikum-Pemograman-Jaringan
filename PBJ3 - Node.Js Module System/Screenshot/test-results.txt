@@ -1,0 +1,103 @@
+DOKUMENTASI HASIL TESTING APLIKASI CATATAN
+==========================================
+
+Student: Bunga Aprillia (23343030)
+Praktikum: PBJ3 - HTTP Request and API
+Date: 2025-12-23
+
+TEST CASE 1: TAMBAH CATATAN
+---------------------------
+Input:
+  Command: node app.js tambah --judul "Belajar JavaScript" --isi "JavaScript adalah bahasa pemrograman yang powerful"
+  
+Expected Output:
+  ✓ Catatan berhasil ditambahkan
+  
+Status: PASS
+
+TEST CASE 2: LIST CATATAN
+--------------------------
+Input:
+  Command: node app.js list
+  
+Expected Output:
+  Daftar Catatan
+  1. Belajar JavaScript
+  
+Status: PASS
+
+TEST CASE 3: BACA CATATAN SPESIFIK
+-----------------------------------
+Input:
+  Command: node app.js baca --judul "Belajar JavaScript"
+  
+Expected Output:
+  Belajar JavaScript
+  JavaScript adalah bahasa pemrograman yang powerful
+  
+Status: PASS
+
+TEST CASE 4: TAMBAH CATATAN KEDUA
+----------------------------------
+Input:
+  Command: node app.js tambah --judul "Express.js Basics" --isi "Framework untuk membuat web server"
+  
+Expected Output:
+  ✓ Catatan berhasil ditambahkan
+  
+Status: PASS
+
+TEST CASE 5: LIST CATATAN (DAFTAR LENGKAP)
+--------------------------------------------
+Input:
+  Command: node app.js list
+  
+Expected Output:
+  Daftar Catatan
+  1. Belajar JavaScript
+  2. Express.js Basics
+  
+Status: PASS
+
+TEST CASE 6: HAPUS CATATAN
+---------------------------
+Input:
+  Command: node app.js hapus --judul "Express.js Basics"
+  
+Expected Output:
+  ✗ Catatan berhasil dihapus
+  
+Status: PASS
+
+TEST CASE 7: LIST CATATAN SETELAH HAPUS
+----------------------------------------
+Input:
+  Command: node app.js list
+  
+Expected Output:
+  Daftar Catatan
+  1. Belajar JavaScript
+  
+Status: PASS
+
+TEST CASE 8: HAPUS CATATAN YANG TIDAK ADA
+-------------------------------------------
+Input:
+  Command: node app.js hapus --judul "Unknown"
+  
+Expected Output:
+  Catatan tidak ditemukan
+  
+Status: PASS
+
+KESIMPULAN:
+===========
+✓ Semua fitur aplikasi catatan berfungsi dengan baik:
+  - Tambah Catatan
+  - List Catatan
+  - Baca Catatan
+  - Hapus Catatan
+  - Validasi Input
+  - Error Handling
+
+Aplikasi berhasil dikerjakan oleh: Bunga Aprillia (23343030)

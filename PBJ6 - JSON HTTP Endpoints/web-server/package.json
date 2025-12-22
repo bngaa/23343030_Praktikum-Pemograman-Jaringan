@@ -1,0 +1,17 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "Aplikasi Cuaca dengan Express.js - PBJ6 JSON HTTP Endpoints",
+  "main": "src/app.js",
+  "author": "Bunga Aprillia (23343030)",
+  "license": "ISC",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "postman-request": "^2.88.1-postman.45"
+  }
+}

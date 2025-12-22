@@ -1,0 +1,63 @@
+========================================
+1. TAMBAH CATATAN
+========================================
+
+Command:
+$ node app.js tambah --judul "Belajar Node.js" --isi "Node.js adalah runtime untuk JavaScript di server"
+
+Output:
+Catatan berhasil ditambahkan
+
+========================================
+2. LIST CATATAN
+========================================
+
+Command:
+$ node app.js list
+
+Output:
+Daftar Catatan
+1. Belajar Node.js
+2. Praktikum Pemograman Jaringan
+3. Express.js Tutorial
+
+========================================
+3. BACA CATATAN
+========================================
+
+Command:
+$ node app.js baca --judul "Belajar Node.js"
+
+Output:
+Belajar Node.js
+Node.js adalah runtime untuk JavaScript di server side. Dibuat oleh Bunga Aprillia (23343030).
+
+========================================
+4. HAPUS CATATAN
+========================================
+
+Command:
+$ node app.js hapus --judul "Express.js Tutorial"
+
+Output:
+Catatan berhasil dihapus
+
+========================================
+5. LIST CATATAN SETELAH HAPUS
+========================================
+
+Command:
+$ node app.js list
+
+Output:
+Daftar Catatan
+1. Belajar Node.js
+2. Praktikum Pemograman Jaringan
+
+========================================
+SUMMARY
+========================================
+Student: Bunga Aprillia (23343030)
+Praktikum: PBJ3 - HTTP Request and API
+Status: Semua operasi (Create, Read, Update, Delete) berhasil dijalankan
+

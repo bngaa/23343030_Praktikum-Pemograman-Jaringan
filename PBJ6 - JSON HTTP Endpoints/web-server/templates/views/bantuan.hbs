@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <div class="faq-header">
+            <h1>Pusat Bantuan</h1>
+            <p>Pertanyaan yang Sering Diajukan (FAQ)</p>
+        </div>
+        
+        <div class="main-content">
+            <h2>ℹ️ Tentang Halaman dan API</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">a. Halaman ini digunakan untuk apa?</div>
+                <div class="faq-answer">
+                    <p>Halaman ini digunakan untuk memberikan informasi bantuan kepada pengguna tentang cara menggunakan aplikasi Cek Cuaca, termasuk penjelasan tentang API yang digunakan dan cara-cara penggunaan aplikasi.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">b. Apa itu API?</div>
+                <div class="faq-answer">
+                    <p>API (Application Programming Interface) adalah antarmuka yang memungkinkan aplikasi untuk berkomunikasi dengan aplikasi lain atau layanan eksternal. API dalam aplikasi ini digunakan untuk mengambil data cuaca dari server eksternal.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">c. API apa yang digunakan dalam aplikasi ini?</div>
+                <div class="faq-answer">
+                    <p>Aplikasi ini menggunakan beberapa API eksternal untuk mendapatkan data cuaca yang akurat. API geocoding digunakan untuk mengkonversi nama lokasi menjadi koordinat, dan API cuaca digunakan untuk mendapatkan prediksi cuaca berdasarkan koordinat tersebut.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">d. Salah satu pola arsitektur API adalah RESTful</div>
+                <div class="faq-answer">
+                    <p>Benar! API RESTful adalah salah satu pola arsitektur paling populer untuk membangun API modern. API RESTful menggunakan HTTP methods (GET, POST, PUT, DELETE) untuk melakukan operasi pada resource.</p>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 40px;">Masih Butuh Bantuan?</h2>
+            <p>Jika Anda tidak menemukan jawaban yang Anda cari, silakan hubungi tim support kami.</p>
+            <div class="contact-box">
+                <p><strong>📧 Email:</strong> support@weatherapp.com</p>
+                <p><strong>⏰ Waktu Respon:</strong> 1x24 jam</p>
+            </div>
+        </div>
+    </main>
+    {{>footer}}
+</body>
+
+</html>
