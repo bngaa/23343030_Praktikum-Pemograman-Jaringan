@@ -88,7 +88,7 @@ node app.js
 
 ---
 
-### PBJ5 - Web Server dan Express.js
+### PBJ5 - Web Server and ExpressJs
 **Tujuan:** Membangun web server menggunakan Express.js dengan server-side rendering menggunakan Handlebars.
 
 **File Utama:**
@@ -103,7 +103,7 @@ node app.js
 
 **Cara Menjalankan:**
 ```bash
-cd "PBJ5 - Web Server dan ExpressJs"
+cd "PBJ5 - Web Server and ExpressJs"
 npm install
 npm start
 ```
