@@ -26,16 +26,8 @@ node hello.js
 
 ---
 
-### PBJ2 - Asynchronous Programming
-**Tujuan:** Mempelajari konsep pemrograman asynchronous, callback, promise, dan async/await.
-
-> **Note:** Dokumentasi lengkap akan ditambahkan di README file lokal.
-
-**Topik Pembelajaran:**
-- Callback Functions
-- Promise & Then/Catch
-- Async/Await
-- Error Handling
+### PBJ2 - Javascript Essential
+**Menggunakan cisco Netacid**
 
 ---
 
@@ -169,7 +161,7 @@ npm start
 
 > **Deployment:** Aplikasi ini di-deploy ke Vercel.
 > 
-> **Link Vercel:** [Akan ditambahkan oleh user]
+> **Link Vercel:** https://aplikasi-cuaca-bunga.vercel.app/
 
 **Topik Pembelajaran:**
 - Git basics & commands
@@ -177,8 +169,6 @@ npm start
 - Deployment ke platform cloud
 - Environment variables
 - CI/CD pipeline
-
-**Catatan:** Akan di-push ke Vercel dengan konfigurasi deployment otomatis dari GitHub.
 
 ---
 
